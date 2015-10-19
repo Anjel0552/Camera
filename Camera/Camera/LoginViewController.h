@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  LoginViewController.h
 //  Camera
 //
 //  Created by Anjel Villafranco on 10/19/15.
@@ -8,19 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
-
+@interface LoginViewController : UIViewController
 
 @end
-
-
-
-
-
-
-
-
-
-
-
