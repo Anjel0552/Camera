@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+#import <Parse/Parse.h>
+
 @interface SelfieTableViewController : UITableViewController
 
+@property PFObject * selfie;
 @end

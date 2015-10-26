@@ -11,6 +11,7 @@
 #import <Parse/Parse.h>
 
 @interface SubmitViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *filteredImageView;
 @property (weak, nonatomic) IBOutlet UITextView *captionTextView;
 
 @end
@@ -19,19 +20,31 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated  {
+
+    self.filteredImageView.image = self.filteredImage;
+
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 - (IBAction)submitSelfie:(id)sender {
     
     PFObject * selfie = [PFObject objectWithClassName:@"Selfie"];
     
-    selfie[@"caption"] = self.captionTextView.text;
+//    UIImagePNGRepresentation(SELF.filteredImage);
+    PFFile * selfie = [PFObject objectWithClassName:@"Selfie"];
     
+    NSData * imageData = UIImagePNGRepresentation(self.filteredImage);
+    PFFile * imageFile = [PFFile fileWithData:imageData];
+    
+    selfie[@"image"] = imageFile;
+    selfie[@"caption"] = self.captionTextView.text;
+    selfie[@"user"] = [PFUser currentUser]; 
     [selfie saveInBackground];
 }
 

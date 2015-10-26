@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Nym-NG-399">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Capture View Controller-->
@@ -107,6 +108,9 @@
                                     <constraint firstAttribute="height" constant="50" id="Qxz-xc-tbA"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="pressedNexted:" destination="vWq-MG-nSA" eventType="touchUpInside" id="FUF-s3-dtA"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -141,20 +145,27 @@
                         <viewControllerLayoutGuide type="bottom" id="Op8-cx-4hu"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="zLk-Zq-94C">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QpX-AQ-ZgS">
-                                <rect key="frame" x="20" y="28" width="560" height="325"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QpX-AQ-ZgS">
+                                <rect key="frame" x="20" y="28" width="280" height="280"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="QpX-AQ-ZgS" secondAttribute="height" multiplier="1:1" id="uCj-Sz-TSi"/>
+                                </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="EwG-NV-dpJ">
-                                <rect key="frame" x="20" y="373" width="560" height="158"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="EwG-NV-dpJ">
+                                <rect key="frame" x="20" y="328" width="280" height="170"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="93q-Vd-1vU">
-                                <rect key="frame" x="262" y="539" width="77" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="93q-Vd-1vU">
+                                <rect key="frame" x="0.0" y="518" width="320" height="50"/>
+                                <color key="backgroundColor" red="0.52780506810000005" green="1" blue="0.35565461240000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="RRc-ot-rc6"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="23"/>
                                 <state key="normal" title="Submit"/>
                                 <connections>
@@ -163,9 +174,23 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="QpX-AQ-ZgS" secondAttribute="trailing" constant="20" id="5F7-Hz-XuD"/>
+                            <constraint firstItem="EwG-NV-dpJ" firstAttribute="leading" secondItem="zLk-Zq-94C" secondAttribute="leading" constant="20" id="ILX-yV-gs6"/>
+                            <constraint firstAttribute="bottom" secondItem="93q-Vd-1vU" secondAttribute="bottom" id="KZq-RU-SAe"/>
+                            <constraint firstAttribute="trailing" secondItem="93q-Vd-1vU" secondAttribute="trailing" id="LJH-xf-tTV"/>
+                            <constraint firstItem="QpX-AQ-ZgS" firstAttribute="leading" secondItem="zLk-Zq-94C" secondAttribute="leading" constant="20" id="RqS-8A-h4w"/>
+                            <constraint firstItem="93q-Vd-1vU" firstAttribute="top" secondItem="EwG-NV-dpJ" secondAttribute="bottom" constant="20" id="UhH-fB-SFn"/>
+                            <constraint firstItem="93q-Vd-1vU" firstAttribute="leading" secondItem="zLk-Zq-94C" secondAttribute="leading" id="gE2-Nd-JbC"/>
+                            <constraint firstItem="EwG-NV-dpJ" firstAttribute="top" secondItem="QpX-AQ-ZgS" secondAttribute="bottom" constant="20" id="pDM-6q-wto"/>
+                            <constraint firstAttribute="trailing" secondItem="EwG-NV-dpJ" secondAttribute="trailing" constant="20" id="vwr-Zq-Noe"/>
+                            <constraint firstItem="QpX-AQ-ZgS" firstAttribute="top" secondItem="LgA-lr-jaa" secondAttribute="bottom" constant="8" id="yex-SR-BL1"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="captionTextView" destination="EwG-NV-dpJ" id="IRs-ay-hLa"/>
+                        <outlet property="filteredImageView" destination="QpX-AQ-ZgS" id="eM6-1P-lBt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A7T-z8-vzP" userLabel="First Responder" sceneMemberID="firstResponder"/>

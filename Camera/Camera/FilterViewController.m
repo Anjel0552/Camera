@@ -12,6 +12,7 @@
 
 #import "ImageEditing.h"
 
+#import "SubmitViewController.h"
 //UIImage * resizeImage(UIImage * image, CGSize newSize) {
 //    
 //    UIGraphicsBeginImageContext(newSize);
@@ -86,15 +87,22 @@
         
         dispatch_async(dispatch_get_main_queue(), ^{
             
-            cell.filterImageView.image = filteredImage;
+            self.filterImageView.image = filteredImage;
             
         });
-        
     });
+}
+
+
+- (IBAction)pressedNexted:(id)sender {
+
     
-//    self.filterImageView.image = filterImage(self.originalImage, cell.filterName);
+    SubmitViewController * submitVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SubmitVC"];
     
+    // Pass the Image
+    submitVC.filteredImage = self.filterImageView.image;
     
+    [self.navigationController pushViewController:submitVC animated:YES];
 }
 
 @end

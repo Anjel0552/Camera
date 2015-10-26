@@ -4,23 +4,35 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Selfies-->
         <scene sceneID="Emi-he-crj">
             <objects>
                 <tableViewController id="gcH-CO-9NQ" customClass="SelfieTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="vxx-2b-aVL">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="449" sectionHeaderHeight="28" sectionFooterHeight="28" id="vxx-2b-aVL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="mdO-gi-nwd" customClass="SelfieTableViewCell">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="449" id="mdO-gi-nwd" customClass="SelfieTableViewCell">
+                                <rect key="frame" x="0.0" y="92" width="320" height="449"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mdO-gi-nwd" id="oaV-vi-E3I">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="448"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fLe-8M-d86">
+                                            <rect key="frame" x="8" y="393" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TaD-O5-o1a">
+                                            <rect key="frame" x="0.0" y="0.0" width="319" height="354"/>
+                                        </imageView>
+                                    </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="selfieImageView" destination="TaD-O5-o1a" id="CKQ-N1-F8Y"/>
                                     <segue destination="yGR-wh-AZR" kind="show" id="8bo-w8-pJN"/>
                                 </connections>
                             </tableViewCell>
@@ -30,7 +42,8 @@
                             <outlet property="delegate" destination="gcH-CO-9NQ" id="34L-Cn-VCS"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="79E-n2-z8t"/>
+                    <navigationItem key="navigationItem" title="Selfies" id="79E-n2-z8t"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RR9-a4-iRQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -45,10 +58,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Mpo-Vg-hlG"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="LNS-Ef-KpB">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s96-pI-SNs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -58,6 +72,7 @@
         <scene sceneID="aNO-g8-7c4">
             <objects>
                 <navigationController id="PP3-Cs-sjZ" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="iYU-Ly-HSb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

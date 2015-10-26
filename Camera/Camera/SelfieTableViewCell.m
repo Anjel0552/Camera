@@ -8,11 +8,16 @@
 
 #import "SelfieTableViewCell.h"
 
+@interface SelfieTableViewCell ()
+
+@property (weak, nonatomic) IBOutlet UIImageView *selfieImageView;
+
+
+@end
+
 @implementation SelfieTableViewCell
 
-- (void)awakeFromNib {
-    // Initialization code
-}
+#warning set image based on selfieImage
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
